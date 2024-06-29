@@ -1,14 +1,5 @@
 <div class="container">
   <h1>Edit Task</h1>
-  <%= form_with model: @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.check_box :completed %>
-  <%= f.label :completed %>
-  <%= f.submit class:"btn btn-primary" %>
-  <% end %>
-
-  <p><span><i class="fa-solid fa-rotate-left"></i></span><%= link_to 'Back to list', tasks_path %></p>
+  <%= render "form", task: @task %>
+  <p><span><i class="fa-solid fa-rotate-left"></i></span><%= link_to 'Back to list', tasks_path, class:"text-decoration-none" %></p>
 </div>

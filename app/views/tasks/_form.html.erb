@@ -1,7 +1,16 @@
+<div></div>
 <%= form_with model: @task do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :details %>
-<%= f.text_field :details %>
-<%= f.submit class:"btn btn-primary" %>
+<%= f.label :title, class:"form-label" %>
+<%= f.text_field :title, class:"form-control" %>
+<%= f.label :details, class:"form-label" %>
+<%= f.text_field :details, class:"form-control" %>
+<% if !@task.new_record? %>
+<div class="m-2">
+  <%= f.check_box :completed, class:"form-check-input" %>
+  <%= f.label :completed, class:"form-check-label" %>
+</div>
+<% end %>
+<div class="m-2">
+  <%= f.submit class:"btn btn-primary" %>
+</div>
 <% end %>
